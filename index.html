@@ -111,6 +111,7 @@ function answer(n) {
   clearTimeout(timerId);
   if (n === current) {
     paths[n].setAttribute("class", "ok");
+    setTimeout(() => { if (paths[n].getAttribute("class") === "ok") paths[n].setAttribute("class", ""); }, 1000);
     done++;
     next();
   } else {
